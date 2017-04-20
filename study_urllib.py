@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 4/20/17 12:10 AM
+# @Author  : Ferras
+# @Email   : 469611602@qq.com
+# @File    : crawl_phone_list_from_JD.py
+# @Software: PyCharm
+
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import random
