@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from urllib.request import urlopen
+from urllib.request import urlopen, build_opener
 from bs4 import BeautifulSoup
 import random
 import datetime
@@ -24,7 +24,11 @@ def get_url_lists(start_url, crawl_url_lists=[]):
     if start_url not in crawl_url_lists:
         crawl_url_lists.append(start_url)
 
-    req_content = urlopen(start_url)
+    headers = ('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) '
+                             'AppleWebKit/537.36 (KHTML, like Gecko) '
+                             'Chrome/55.0.2883.9 Safari/537.36')
+    build_opener().addheaders = [headers]
+    req_content = build_opener().open(start_url)
     bs_obj = BeautifulSoup(req_content.read(), 'html.parser')
     next_page_url_obj = bs_obj.findAll("a", {"class": "pn-next"})
     hostname = "https://list.jd.com"
@@ -45,17 +49,11 @@ def get_phone_data_from_jd(start_url):
     :param start_url: Start url.
     :return: Data to be stored.
     """
-    headers = {
-                'Accept': '*/*',
-                'Accept-Encoding': 'gzip, deflate, sdch, br',
-                'Accept-Language': 'zh-CN,zh;q=0.8',
-                'Connection': 'keep - alive',
-                'Host': 'p.3.cn',
-                'Referer': 'https://list.jd.com/list.html?cat=9987,653,655',
-                'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 '
-                              '(KHTML, like Gecko) Chrome/55.0.2883.9 Safari/537.36'
-                }
-    req_content = urlopen(start_url)
+    headers = ('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) '
+                             'AppleWebKit/537.36 (KHTML, like Gecko) '
+                             'Chrome/55.0.2883.9 Safari/537.36')
+    build_opener().addheaders = [headers]
+    req_content = build_opener().open(start_url)
     bs_obj = BeautifulSoup(req_content.read(), 'html.parser')
 
     phone_lists = bs_obj.findAll("li", {"class": "gl-item"})
@@ -84,11 +82,12 @@ def get_phone_data_from_jd(start_url):
         price_data = json.loads(json_price)[0]
         phone_price = price_data["op"]
 
-        # comments_url = 'https://club.jd.com/comment/productCommentSummaries.action?' \
-        #                'referenceIds='+ phone_sku
+        # comments_url = 'https://club.jd.com/comment/product' \
+        #                'CommentSummaries.action?referenceIds=' + phone_sku
         guess_num_2 = random.randrange(10000000, 99999999)
-        comments_url = 'https://club.jd.com/comment/productCommentSummaries.action?' \
-                       'referenceIds=' + phone_sku + '&_=14927' + str(guess_num_2)
+        comments_url = 'https://club.jd.com/comment/productComment' \
+                       'Summaries.action?referenceIds=' + phone_sku \
+                       + '&_=14927' + str(guess_num_2)
         # get json comments data
         comments_json_data = requests.get(comments_url, headers).text
         # Get comments dict. CommentsCount for key and a list for value.
@@ -138,8 +137,8 @@ def main_control(start_url):
         i += 1
         csv_file_name = "res" + str(i)
         with open(csv_file_name + ".csv", "w") as f:
-            header = ["店铺", "简介", "SKU", "价格", "总评", "好评", "追评", "中评", "差评",
-                       "好评率", "差评率", "中评率"]
+            header = ["店铺", "简介", "SKU", "价格", "总评", "好评",
+                      "追评", "中评", "差评", "好评率", "差评率", "中评率"]
             f_csv = csv.writer(f)
             f_csv.writerow(header)
             f_csv.writerows(csv_data)
@@ -164,8 +163,8 @@ def main_control_res(start_url):
 # csv_data_res = main_control_res(begin_url)
 # csv_name = "res"
 # with open(csv_name + ".csv", "w") as f:
-#     headers = ["店铺", "简介", "SKU", "价格", "总评", "好评", "追评", "中评", "差评",
-#                "好评率", "差评率", "中评率"]
+#     headers = ["店铺", "简介", "SKU", "价格", "总评", "好评", "追评",
+#                "中评", "差评","好评率", "差评率", "中评率"]
 #     f_csv = csv.writer(f)
 #     f_csv.writerow(headers)
 #     f_csv.writerows(csv_data_res)
