@@ -7,7 +7,7 @@
 # @Software: PyCharm
 import re
 import pymysql
-from MyGit.crawlDataFromJD import get_phone_data_from_jd
+from crawlDataFromJD import getPhoneDataFromJd
 
 
 def judge_table_exist(table_name, database_name):
@@ -100,7 +100,7 @@ def store_data(table_name, database_name, start_url):
     try:
 
         # get_phone_data_from_jd()获取一页数据
-        sql_data = get_phone_data_from_jd(start_url)
+        sql_data = getPhoneDataFromJd(start_url)
         print(len(sql_data))
         for data in sql_data:
             # 存储爬取数据
