@@ -35,9 +35,8 @@ def getUrlList(startUrl, crawlUrlLists=[]):
     bsObj = BeautifulSoup(reqContent.read(), 'html.parser')
     nextPageUrlObj = bsObj.findAll("a", {"class": "pn-next"})
     print(">" * 10, "运行中3...")
+    hostname = "https://list.jd.com"
     if nextPageUrlObj:
-
-        hostname = "https://list.jd.com"
         # '#J_main'需保留，否则无法抓取全部url
         nextPageUrl = hostname + nextPageUrlObj[0]["href"] + '#J_main'
         print(nextPageUrl)
@@ -70,26 +69,19 @@ def getPhoneDataFromJd(start_url):
         # 店铺名称 store_name
         store_obj = phone_obj.findAll("div", {"class": "p-shop"})
         store_name = store_obj[0]["data-shop_name"]
-
         # 手机简介
         phone_brief_obj = phone_obj.findAll("em")
         phone_brief = phone_brief_obj[-1].string
-
         # SKU
         phone_sku_obj = phone_obj.findAll("div", {"class": "j-sku-item"})
         phone_sku = phone_sku_obj[0]["data-sku"]
-
         # 价格 phone_price
-        # json_price_url = 'https://p.3.cn/prices/mgets?skuIds=J_' + phone_sku
         guess_num_1 = random.randrange(10000000, 99999999)
         json_price_url = 'https://p.3.cn/prices/mgets?pduid=' \
                          + str(guess_num_1) + '&skuIds=J_' + phone_sku
         json_price = requests.get(json_price_url).text
         price_data = json.loads(json_price)[0]
         phone_price = price_data["op"]
-
-        # comments_url = 'https://club.jd.com/comment/product' \
-        #                'CommentSummaries.action?referenceIds=' + phone_sku
         guess_num_2 = random.randrange(10000000, 99999999)
         comments_url = 'https://club.jd.com/comment/productComment' \
                        'Summaries.action?referenceIds=' + phone_sku \
@@ -121,9 +113,7 @@ def getPhoneDataFromJd(start_url):
         temp_phone_row.append(good_comment_rate)
         temp_phone_row.append(poor_comment_rate)
         temp_phone_row.append(general_comment_rate)
-
         print(temp_phone_row)
-
         phone_row.append(temp_phone_row)
 
     return phone_row
