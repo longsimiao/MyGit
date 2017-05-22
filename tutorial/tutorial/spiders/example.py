@@ -23,7 +23,7 @@ class JdSpider(Spider):
 
     def parse(self, response):
         item = JdspiderItem()
-        phones = Selector(response).xpath('//*[@id="plist"]/ul/li')
+        phones = Selector(response).xpath('//*[@id="plist"]/ul/li[1]')
         for each in phones:
             phoneStore = each.xpath('div/div[7]/@data-shop_name').extract()
             # 获取skuId
@@ -65,12 +65,12 @@ class JdSpider(Spider):
             item['PoorRate'] = poorRate
             yield item
 
-        next_link = response.xpath('//*[@id="J_bottomPage"]/span[1]/a[10]/@href').extract()
-        if next_link:
-            next_link = 'https://list.jd.com' + next_link[0] + '#J_main'
-            print(next_link)
-            time.sleep(1)
-            yield Request(next_link, callback=self.parse)
+        # next_link = response.xpath('//*[@id="J_bottomPage"]/span[1]/a[10]/@href').extract()
+        # if next_link:
+        #     next_link = 'https://list.jd.com' + next_link[0] + '#J_main'
+        #     print(next_link)
+        #     time.sleep(1)
+        #     yield Request(next_link, callback=self.parse)
 
 
 # from scrapy.spiders import CrawlSpider
