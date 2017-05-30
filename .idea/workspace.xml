@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9be52c6-bf25-4ac5-bacb-d8ba1ef115b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firstSite/sitebuilder/pages/pricing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/firstSite/sitebuilder/pages/pricing.html" afterPath="$PROJECT_DIR$/firstSite/sitebuilder/pages/pricing.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/templates/base.html" afterPath="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/views.py" afterPath="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,21 +47,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="76" lean-forward="true" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
+            <state relative-caret-position="324">
+              <caret line="18" column="74" lean-forward="true" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pricing.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="617">
+              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+              <folding>
+                <element signature="e#23#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pricing.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/firstSite/sitebuilder/pages/pricing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="56" column="18" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+            <state relative-caret-position="378">
+              <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -97,7 +109,6 @@
         <option value="$PROJECT_DIR$/firstSite/chapter2/prototypes.py" />
         <option value="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/prototypes.py" />
         <option value="$PROJECT_DIR$/firstSite/placeholder/placeholder.py" />
-        <option value="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/views.py" />
         <option value="$PROJECT_DIR$/firstSite/sitebuilder/pages/index.html" />
         <option value="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/static/css/site.css" />
         <option value="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/templates/page.html" />
@@ -108,8 +119,9 @@
         <option value="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/urls.py" />
         <option value="$PROJECT_DIR$/firstSite/sitebuilder/prototypes.py" />
         <option value="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/management/commands/build.py" />
-        <option value="$PROJECT_DIR$/firstSite/sitebuilder/pages/pricing.html" />
+        <option value="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/views.py" />
         <option value="$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/templates/base.html" />
+        <option value="$PROJECT_DIR$/firstSite/sitebuilder/pages/pricing.html" />
       </list>
     </option>
   </component>
@@ -824,16 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gitlab.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -953,18 +955,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/firstSite/sitebuilder/pages/pricing.html">
+    <entry file="file://$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="56" column="18" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="617">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <element signature="e#23#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/firstSite/sitebuilder/sitebuilder/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="76" lean-forward="true" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
+        <state relative-caret-position="324">
+          <caret line="18" column="74" lean-forward="true" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firstSite/sitebuilder/pages/pricing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding />
         </state>
       </provider>
