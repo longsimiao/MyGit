@@ -22,9 +22,10 @@ from django.shortcuts import render
 from django.views.decorators.http import etag
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
-# SECRET_KEY = os.environ.get('SECRET_KEY', '{{ SECRET_KEY }}')
-SECRET_KEY = os.environ.get('SECRET_KEY', 'mxl@123')
+SECRET_KEY = os.environ.get('SECRET_KEY', '{{ SECRET_KEY }}')
+# SECRET_KEY = os.environ.get('SECRET_KEY', 'mxl@123')
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
+print(ALLOWED_HOSTS)
 
 BASE_DIR = os.path.dirname(__file__)
 
